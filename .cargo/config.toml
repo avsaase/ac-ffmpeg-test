@@ -1,0 +1,16 @@
+[env]
+FFMPEG_INCLUDE_DIR = { value = "ext/ffmpeg-5.1-windows-desktop-vs2022-lite/include", relative = true}
+FFMPEG_LIB_DIR = { value = "ext/ffmpeg-5.1-windows-desktop-vs2022-lite/lib", relative = true }
+FFMPEG_STATIC = "1"
+
+[target.x86_64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
+]
+
+[target.aarch64-apple-darwin]
+rustflags = [
+  "-C", "link-arg=-undefined",
+  "-C", "link-arg=dynamic_lookup",
+]
